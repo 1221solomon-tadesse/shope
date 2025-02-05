@@ -5,11 +5,10 @@ import { useState } from "react";
 
 const AllProduct = () => {
   const [visibleCount, setVisibleCount] = useState(6); 
-
   const handleSeeMore = () => {
-    const isMobile = window.innerWidth < 768;
+    const isMobile = window.innerWidth < 768; 
     if (isMobile) {
-      setVisibleCount((prev) => prev + 4); 
+      setVisibleCount((prev) => prev + 4);
       setVisibleCount((prev) => prev + 6); 
     }
   };
@@ -32,7 +31,7 @@ const AllProduct = () => {
                   className="h-6 w-6 text-black"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor"
+                  stroke="currentColor" 
                 >
                   <path
                     strokeLinecap="round"
