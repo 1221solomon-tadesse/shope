@@ -1,3 +1,4 @@
+import AllProduct from "@/components/presentation/AllProduct";
 import Home from "@/components/presentation/Home";
 import MenuLinks from "@/components/presentation/menu";
 import Product from "@/components/presentation/Product";
@@ -7,6 +8,7 @@ export default function Main() {
  <Home/>
  <Product/>
  <MenuLinks/>
+ <AllProduct/>
     </div>
   );
 }

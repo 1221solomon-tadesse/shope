@@ -1,25 +1,29 @@
-'use client'
+"use client";
 import Image from "next/image";
-import Link from "next/link";
 import products from "@/components/data/Productcard";
 import { useState } from "react";
 
-export default function Product() {
+const AllProduct = () => {
+  const [visibleCount, setVisibleCount] = useState(6); 
+
+  const handleSeeMore = () => {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      setVisibleCount((prev) => prev + 4); 
+      setVisibleCount((prev) => prev + 6); 
+    }
+  };
 
   return (
-    <div className="min-h-screen  p-8">
-      <h1 className="text-3xl font-bold mt-10 mb-10 flex justify-around ">
-        Latest Collections
-      </h1>
+    <div className="min-h-screen p-8">
+      <h1 className="text-3xl font-bold mb-8">Latest Collections</h1>
 
       <div className="md:container md:mx-auto overflow-y-hidden">
-        <div className="flex md:flex-row md:flex-wrap gap-4 overflow-x-auto pb-4 scrollbar-hide md:justify-center ">
-          {products.slice(0, 3).map((product) => (
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-4">
+          {products.slice(0, visibleCount).map((product) => (
             <div
               key={product.id}
-              className="relative flex-none w-[80%] md:w-[435px] h-[497px
-] bg-white rounded-lg border-2 p-6 
-                        "
+              className="relative bg-white rounded-lg border-2 p-6 flex flex-col h-full"
             >
               {/* Heart Icon */}
               <button className="absolute top-10 left-10 p-2 rounded-full bg-white hover:bg-gray-100 transition-colors">
@@ -51,7 +55,7 @@ export default function Product() {
                   alt={product.name}
                   width={400}
                   height={400}
-                  className="object-cover mr-5"
+                  className="object-cover"
                 />
               </div>
 
@@ -59,16 +63,28 @@ export default function Product() {
               <p className="text-gray-600 mb-4 line-clamp-2">
                 {product.description}
               </p>
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center mb-4">
                 <span className="text-2xl font-bold">${product.price}</span>
-                <button className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                <button className="bg-orange-600 text-white px-2 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">
                   Add to Cart
                 </button>
               </div>
             </div>
           ))}
         </div>
+
+        {/* See More Button */}
+        <div className="flex justify-center">
+          <button
+            onClick={handleSeeMore}
+            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200"
+          >
+            See More
+          </button>
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default AllProduct;
