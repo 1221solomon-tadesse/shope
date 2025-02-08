@@ -94,12 +94,122 @@ const Navbar = () => {
           <CiSearch className="text-white w-6 h-6" />
         </div>
       </div>
-      <div className="hidden  md:flex">Currency</div>
+      <div className="hidden  md:block">Currency</div>
       <div className="w-12 flex items-center justify-center">
         <div className="rounded-full bg-[#882BEC] w-10 h-10 flex items-center justify-center">
           <FaShoppingBag className="text-white  w-6 h-6" />
         </div>
       </div>
+
+      {/* Mobile Sidebar */}
+      {isSidebarOpen && (
+        <>
+          <div
+            className="fixed inset-0 bg-black/50 z-40 md:hidden"
+            onClick={() => setIsSidebarOpen(false)}
+          />
+          <div className="fixed left-0 top-0 h-fit w-1/2 bg-white z-50 p-4 md:hidden">
+            <div className="flex flex-col gap-4">
+              <hr />
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="flex justify-between items-center"
+              >
+                Register/Login <RiArrowDropDownLine />
+              </button>
+              <hr />
+              {isOpen && (
+                <div className="pl-4">
+                  <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg">
+                    <a
+                      href="/register"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Register
+                    </a>
+                  
+                    <a
+                      href="/login"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Login
+                    </a>
+                  </div>
+              
+                </div>
+              )}
+              <ul>
+                <li className="cursor-pointer">Our catagories</li>
+                <li className="cursor-pointer ">Men</li>
+                <li className="cursor-pointer ">women</li>
+                <li className="cursor-pointer ">Kids</li>
+                <li className="cursor-pointer ">Accessories</li>
+              </ul>
+              <button
+                onClick={() => setIsMore(!isMore)}
+                className="flex justify-between items-center"
+              >
+                More <RiArrowDropDownLine />
+              </button>
+              {isMore && (
+                <div className="pl-4">
+                  {" "}
+                  <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg ">
+                    <a
+                      href="/ Perfumes"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Perfumes
+                    </a>
+                    <hr />
+                    <a
+                      href="/login"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Jaweleries
+                    </a>
+                    <hr />
+                    <a
+                      href="/register"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Jym wears
+                    </a>
+                    <hr />
+                    <a
+                      href="/login"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Ventage wears
+                    </a>
+                    <hr />
+                    <a
+                      href="/register"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Sport wear
+                    </a>
+                    <hr />
+                    <a
+                      href="/login"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Payjams
+                    </a>
+                    <hr />
+                    <a
+                      href="/login"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Slipers
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
