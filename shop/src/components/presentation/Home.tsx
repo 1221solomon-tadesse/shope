@@ -7,7 +7,7 @@ const Home = () => {
     <main className="bg-bg">
       <div className="grid grid-cols-1 lg:grid-cols-3  mx-auto px-4">
         <div className=" col-span-1 flex justify-center items-center py-24">
-          <h1 className="text-white text-128 font-alfa leading-175  text-end" >
+          <h1 className="text-white text-128 font-alfa leading-175  text-end">
             Gabeya
           </h1>
         </div>
@@ -24,13 +24,15 @@ const Home = () => {
             Shop
           </h1>
         </div>
-        <div className="flex justify-center items-center lg:col-span-1 row-span-3 align-top mb-24">
+        <div className="md:flex justify-center items-center lg:col-span-1 row-span-3 align-top mb-24 hidden">
           <Image src={image.imag2} alt="shoe" />
         </div>
         <div className="  lg:col-span-1 row-span-3 justify-center pt-24 ">
-          <button className="bg-orange-400 w-full h-fit p-6 rounded-lg">Explore now</button>
+          <button className="bg-orange-400 w-full h-fit p-6 rounded-lg">
+            Explore now
+          </button>
         </div>
-        <div className="flex justify-center items-center lg:col-span-1 row-span-3">
+        <div className="md:flex justify-center items-center lg:col-span-1 row-span-3  hidden">
           <Image src={image.imag2} alt="shoe" />
         </div>
       </div>

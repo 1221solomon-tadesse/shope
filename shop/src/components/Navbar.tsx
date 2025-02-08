@@ -1,17 +1,26 @@
 "use client"; 
+import { HiMenu } from "react-icons/hi";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
 import { FaShoppingBag } from "react-icons/fa";
 import React, { useState } from "react";
 const Navbar = () => {
+   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false); 
   const [isMore, setIsMore] = useState(false);
   return (
-    <div className="flex justify-around p-4 items-center">
-      <div>
+    <div className="flex justify-between md:justify-around p-4 items-center relative">
+      {/* Mobile Menu Button */}
+      <div className="flex items-center gap-4 md:hidden">
+        <button onClick={() => setIsSidebarOpen(true)}>
+          <HiMenu className="w-6 h-6" />
+        </button>
         <h1>Logo</h1>
       </div>
-      <ul className="flex gap-20  ">
+      <div className="hidden md:block">
+        <h1>Logo</h1>
+      </div>
+      <ul className=" hidden md:flex gap-20  ">
         <div className="relative text-center">
           <button onClick={() => setIsOpen(!isOpen)} className="flex gap-5">
             Register/Login
@@ -85,7 +94,7 @@ const Navbar = () => {
           <CiSearch className="text-white w-6 h-6" />
         </div>
       </div>
-      <div>Currency</div>
+      <div className="hidden  md:flex">Currency</div>
       <div className="w-12 flex items-center justify-center">
         <div className="rounded-full bg-[#882BEC] w-10 h-10 flex items-center justify-center">
           <FaShoppingBag className="text-white  w-6 h-6" />

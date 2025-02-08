@@ -4,12 +4,14 @@ import products from "@/components/data/Productcard";
 import { useState } from "react";
 
 const AllProduct = () => {
-  const [visibleCount, setVisibleCount] = useState(6); 
+  const [visibleCount, setVisibleCount] = useState(6);
+
   const handleSeeMore = () => {
-    const isMobile = window.innerWidth < 768; 
+    const isMobile = window.innerWidth < 768;
     if (isMobile) {
-      setVisibleCount((prev) => prev + 4);
-      setVisibleCount((prev) => prev + 6); 
+      setVisibleCount((prev) => prev + 4); // Add 4 more for mobile
+    } else {
+      setVisibleCount((prev) => prev + 6); // Add 6 more for desktop
     }
   };
 
@@ -24,14 +26,13 @@ const AllProduct = () => {
               key={product.id}
               className="relative bg-white rounded-lg border-2 p-6 flex flex-col h-full"
             >
-              {/* Heart Icon */}
               <button className="absolute top-10 left-10 p-2 rounded-full bg-white hover:bg-gray-100 transition-colors">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6 text-black"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor" 
+                  stroke="currentColor"
                 >
                   <path
                     strokeLinecap="round"
@@ -42,12 +43,12 @@ const AllProduct = () => {
                 </svg>
               </button>
 
-              {/* In Stock Badge */}
+            
               <div className="absolute top-10 right-10 bg-white text-black px-3 py-1 rounded-full text-sm font-medium">
                 In Stock
               </div>
 
-              {/* Product Image */}
+        
               <div className="aspect-square bg-gray-200 rounded-lg mb-4 overflow-hidden">
                 <Image
                   src={product.image}
@@ -72,7 +73,7 @@ const AllProduct = () => {
           ))}
         </div>
 
-        {/* See More Button */}
+       
         <div className="flex justify-center">
           <button
             onClick={handleSeeMore}
