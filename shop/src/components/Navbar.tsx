@@ -4,10 +4,13 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
 import { FaShoppingBag } from "react-icons/fa";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 const Navbar = () => {
    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false); 
   const [isMore, setIsMore] = useState(false);
+  const router = useRouter();
+
   return (
     <div className="flex justify-between md:justify-around p-4 items-center relative">
       {/* Mobile Menu Button */}
@@ -96,9 +99,12 @@ const Navbar = () => {
       </div>
       <div className="hidden  md:block">Currency</div>
       <div className="w-12 flex items-center justify-center">
-        <div className="rounded-full bg-[#882BEC] w-10 h-10 flex items-center justify-center">
-          <FaShoppingBag className="text-white  w-6 h-6" />
-        </div>
+        <button
+          className="rounded-full bg-[#882BEC] w-10 h-10 flex items-center justify-center"
+          onClick={() => router.push("/Cart")} // Navigate to cart page
+        >
+          <FaShoppingBag className="text-white w-6 h-6" />
+        </button>
       </div>
 
       {/* Mobile Sidebar */}
@@ -127,7 +133,7 @@ const Navbar = () => {
                     >
                       Register
                     </a>
-                  
+
                     <a
                       href="/login"
                       className="block px-4 py-2 hover:bg-gray-100"
@@ -135,7 +141,6 @@ const Navbar = () => {
                       Login
                     </a>
                   </div>
-              
                 </div>
               )}
               <ul>
