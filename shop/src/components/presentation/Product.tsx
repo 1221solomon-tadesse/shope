@@ -3,9 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import products from "@/components/data/Productcard";
 import { useState } from "react";
-
+import { useCart } from '@/contect/CartContect'; 
 export default function Product() {
 
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (product: any) => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      quantity: 1, 
+    });
+  };
   return (
     <div className="min-h-screen  p-8">
       <h1 className="text-3xl font-bold mt-10 mb-10 flex justify-around ">
@@ -21,7 +32,6 @@ export default function Product() {
 ] bg-white rounded-lg border-2 p-6 
                         "
             >
-              {/* Heart Icon */}
               <button className="absolute top-10 left-10 p-2 rounded-full bg-white hover:bg-gray-100 transition-colors">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -39,12 +49,10 @@ export default function Product() {
                 </svg>
               </button>
 
-              {/* In Stock Badge */}
               <div className="absolute top-10 right-10 bg-white text-black px-3 py-1 rounded-full text-sm font-medium">
                 In Stock
               </div>
 
-              {/* Product Image */}
               <div className="aspect-square bg-gray-200 rounded-lg mb-4 overflow-hidden">
                 <Image
                   src={product.image}
@@ -61,7 +69,10 @@ export default function Product() {
               </p>
               <div className="flex justify-between items-center">
                 <span className="text-2xl font-bold">${product.price}</span>
-                <button className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                <button
+                  onClick={() => handleAddToCart(product)}
+                  className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200"
+                >
                   Add to Cart
                 </button>
               </div>
