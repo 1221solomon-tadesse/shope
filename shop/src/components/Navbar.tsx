@@ -5,6 +5,7 @@ import { CiSearch } from "react-icons/ci";
 import { FaShoppingBag } from "react-icons/fa";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 const Navbar = () => {
    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false); 
@@ -41,11 +42,21 @@ const Navbar = () => {
             </div>
           )}
         </div>
-        <li className="cursor-pointer">Home</li>
-        <li className="cursor-pointer ">Men</li>
-        <li className="cursor-pointer ">women</li>
-        <li className="cursor-pointer ">Kids</li>
-        <li className="cursor-pointer ">Accessories</li>
+        <Link href="/" className="cursor-pointer">
+          Home
+        </Link>
+        <Link href="/Men" className="cursor-pointer">
+          Men
+        </Link>
+        <Link href="/Women" className="cursor-pointer">
+          Women
+        </Link>
+        <Link href="/Kids" className="cursor-pointer">
+          Kids
+        </Link>
+        <Link href="/Accessories" className="cursor-pointer">
+          Accessories
+        </Link>
         <div className="relative">
           <button onClick={() => setIsMore(!isMore)} className="flex gap-5">
             More

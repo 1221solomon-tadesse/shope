@@ -2,6 +2,7 @@
 import { useCart } from "@/contect/CartContect";
 import { useState } from "react";
 
+
 export default function CheckoutPage() {
   const { cartItems, cartTotal, clearCart } = useCart();
   const [formData, setFormData] = useState({
@@ -119,7 +120,7 @@ export default function CheckoutPage() {
                   setFormData({ ...formData, country: e.target.value })
                 }
               >
-                <option value="">Select Country</option>
+                <option value="">Select your region</option>
                 <option value="US">Tigray</option>
                 <option value="UK">Afar</option>
                 <option value="CA">Amhara</option>

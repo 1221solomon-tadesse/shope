@@ -1,11 +1,11 @@
 // app/cart/page.tsx
 "use client";
-
 import { useCart } from "@/contect/CartContect";
 import Image from "next/image";
-
+import { useRouter } from "next/navigation";
 const CartPage = () => {
   const { cartItems, removeFromCart, updateQuantity, cartTotal } = useCart();
+  const router = useRouter();
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -76,7 +76,7 @@ const CartPage = () => {
                 <span>${(cartTotal * 1.1).toFixed(2)}</span>
               </div>
             </div>
-            <button className="w-full bg-black text-white py-3 rounded-lg mt-6 hover:bg-gray-800 transition">
+            <button  onClick={() => router.push("/checkOut")} className="w-full bg-black text-white py-3 rounded-lg mt-6 hover:bg-gray-800 transition">
               Checkout
             </button>
           </div>
