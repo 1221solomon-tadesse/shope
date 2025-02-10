@@ -1,4 +1,3 @@
-// context/CartContext.tsx
 "use client";
 
 import { createContext, useContext, useState, useEffect } from "react";
@@ -17,6 +16,7 @@ interface CartContextType {
   removeFromCart: (itemId: string) => void;
   updateQuantity: (itemId: string, newQuantity: number) => void;
   cartTotal: number;
+  clearCart: () => void; 
 }
 
 const CartContext = createContext<CartContextType>({} as CartContextType);
@@ -36,6 +36,9 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
+  const clearCart = () => {
+    setCartItems([]);
+  };
 
   const addToCart = (item: CartItem) => {
     setCartItems((prev) => {
@@ -48,7 +51,6 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
       return [...prev, { ...item, quantity: 1 }];
     });
   };
-
   const removeFromCart = (itemId: string) => {
     setCartItems((prev) => prev.filter((item) => item.id !== itemId));
   };
@@ -75,6 +77,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         removeFromCart,
         updateQuantity,
         cartTotal,
+        clearCart,
       }}
     >
       {children}
