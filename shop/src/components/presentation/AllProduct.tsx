@@ -14,7 +14,6 @@ const AllProduct = () => {
       setVisibleCount((prev) => prev + 6); // Add 6 more for desktop
     }
   };
-
   return (
     <div className="min-h-screen p-8">
       <h1 className="text-3xl font-bold mb-8">Latest Collections</h1>
