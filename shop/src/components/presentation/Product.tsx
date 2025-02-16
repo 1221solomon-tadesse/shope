@@ -1,8 +1,6 @@
 'use client'
 import Image from "next/image";
-import Link from "next/link";
 import products from "@/components/data/Productcard";
-import { useState } from "react";
 import { useCart } from '@/contect/CartContect'; 
 export default function Product() {
 
