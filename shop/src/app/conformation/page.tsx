@@ -2,7 +2,6 @@
 import Link from "next/link";
 
 export default function OrderConfirmation() {
-  // Get last order from localStorage
   const orders = JSON.parse(localStorage.getItem("orders") || "[]");
   const lastOrder = orders[orders.length - 1];
 
