@@ -1,0 +1,38 @@
+# name: CI/CD Pipeline with Linting
+
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+
+# jobs:
+#   lint-and-build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
+
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: '20'
+#           cache: 'npm'
+
+#       - name: Install dependencies
+#         working-directory: ./shop
+#         run: npm ci # Uses package-lock.json for reproducible builds
+
+#       - name: Run ESLint
+#         working-directory: ./shop
+#         run: npx eslint . --max-warnings=0
+#         env:
+#           CI: true # Makes ESLint run in CI mode (more strict)
+
+#       - name: Build project
+#         working-directory: ./shop
+#         run: npm run build
+
+#       - name: Run tests (if you have them)
+#         working-directory: ./shop
+#         run: npm test
