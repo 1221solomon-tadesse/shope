@@ -1,10 +1,20 @@
 'use client'
 import Image from "next/image";
-import products from "@/components/data/Productcard";
+import products, { menu } from "@/components/data/Productcard";
 import { useCart } from '@/contect/CartContect'; 
-export default function Product() {
+import { useState, useEffect } from "react";
 
+interface ProductProps {
+  initialCategory?: string | null;
+}
+
+export default function Product({ initialCategory = null }: ProductProps) {
   const { addToCart } = useCart();
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(initialCategory);
+
+  useEffect(() => {
+    setSelectedCategory(initialCategory);
+  }, [initialCategory]);
 
   const handleAddToCart = (product: any) => {
     addToCart({
@@ -15,15 +25,36 @@ export default function Product() {
       quantity: 1, 
     });
   };
+
+  const filteredProducts = selectedCategory
+    ? products.filter((product) => product.category === selectedCategory)
+    : products;
+
   return (
     <div className="min-h-screen  p-8">
       <h1 className="text-3xl font-bold mt-10 mb-10 flex justify-around ">
         Latest Collections
       </h1>
-
+      <div className="flex gap-4 mb-8 justify-center flex-wrap">
+        <button
+          className={`px-4 py-2 rounded-lg border ${selectedCategory === null ? 'bg-blue-600 text-white' : 'bg-white text-black'}`}
+          onClick={() => setSelectedCategory(null)}
+        >
+          All
+        </button>
+        {menu.map((item) => (
+          <button
+            key={item.id}
+            className={`px-4 py-2 rounded-lg border ${selectedCategory === item.name ? 'bg-blue-600 text-white' : 'bg-white text-black'}`}
+            onClick={() => setSelectedCategory(item.name)}
+          >
+            {item.name}
+          </button>
+        ))}
+      </div>
       <div className="md:container md:mx-auto overflow-y-hidden">
         <div className="flex md:flex-row md:flex-wrap gap-4 overflow-x-auto pb-4 scrollbar-hide md:justify-center ">
-          {products.slice(0, 3).map((product) => (
+          {filteredProducts.slice(0, 3).map((product) => (
             <div
               key={product.id}
               className="relative flex-none w-[80%] md:w-[435px] h-[497px] bg-white rounded-lg border-2 p-6"

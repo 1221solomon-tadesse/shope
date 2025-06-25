@@ -49,13 +49,13 @@ const Navbar = () => {
         <Link href="/" className="cursor-pointer">
           Home
         </Link>
-        <Link href="/Men" className="cursor-pointer">
+        <Link href="/?category=Men" className="cursor-pointer">
           Men
         </Link>
-        <Link href="/Women" className="cursor-pointer">
+        <Link href="/?category=Women" className="cursor-pointer">
           Women
         </Link>
-        <Link href="/Kids" className="cursor-pointer">
+        <Link href="/?category=Kids" className="cursor-pointer">
           Kids
         </Link>
         <Link href="/Accessories" className="cursor-pointer">

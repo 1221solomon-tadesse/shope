@@ -1,4 +1,3 @@
-
 import img1 from "@/app/asset/bag.png";
 import img2 from "@/app/asset/shoe.png";
 import img3 from "@/app/asset/150577_BROWN_9 2.png";
@@ -10,6 +9,7 @@ const products = [
     price: 599.99,
     description: "Premium quality leather handbag",
     image: img1,
+    category: "Women",
   },
   {
     id: 2,
@@ -17,6 +17,7 @@ const products = [
     price: 129.99,
     description: "High-performance athletic footwear",
     image: img2,
+    category: "Men",
   },
   {
     id: 3,
@@ -24,6 +25,7 @@ const products = [
     price: 89.99,
     description: "Comfortable everyday shoes",
     image: img3,
+    category: "Kids",
   },
   {
     id: 1,
@@ -31,6 +33,7 @@ const products = [
     price: 599.99,
     description: "Premium quality leather handbag",
     image: img1,
+    category: "Women",
   },
   {
     id: 2,
@@ -38,6 +41,7 @@ const products = [
     price: 129.99,
     description: "High-performance athletic footwear",
     image: img2,
+    category: "Men",
   },
   {
     id: 3,
@@ -45,6 +49,7 @@ const products = [
     price: 89.99,
     description: "Comfortable everyday shoes",
     image: img3,
+    category: "Kids",
   },
   {
     id: 1,
@@ -52,6 +57,7 @@ const products = [
     price: 599.99,
     description: "Premium quality leather handbag",
     image: img1,
+    category: "Women",
   },
   {
     id: 2,
@@ -59,6 +65,7 @@ const products = [
     price: 129.99,
     description: "High-performance athletic footwear",
     image: img2,
+    category: "Men",
   },
   {
     id: 3,
@@ -66,6 +73,7 @@ const products = [
     price: 89.99,
     description: "Comfortable everyday shoes",
     image: img3,
+    category: "Kids",
   },
   {
     id: 1,
@@ -73,6 +81,7 @@ const products = [
     price: 599.99,
     description: "Premium quality leather handbag",
     image: img1,
+    category: "Women",
   },
   {
     id: 2,
@@ -80,6 +89,7 @@ const products = [
     price: 129.99,
     description: "High-performance athletic footwear",
     image: img2,
+    category: "Men",
   },
   {
     id: 3,
@@ -87,6 +97,7 @@ const products = [
     price: 89.99,
     description: "Comfortable everyday shoes",
     image: img3,
+    category: "Kids",
   },
   {
     id: 1,
@@ -94,6 +105,7 @@ const products = [
     price: 599.99,
     description: "Premium quality leather handbag",
     image: img1,
+    category: "Women",
   },
   {
     id: 2,
@@ -101,6 +113,7 @@ const products = [
     price: 129.99,
     description: "High-performance athletic footwear",
     image: img2,
+    category: "Men",
   },
   {
     id: 3,
@@ -108,6 +121,7 @@ const products = [
     price: 89.99,
     description: "Comfortable everyday shoes",
     image: img3,
+    category: "Kids",
   },
   {
     id: 1,
@@ -115,6 +129,7 @@ const products = [
     price: 599.99,
     description: "Premium quality leather handbag",
     image: img1,
+    category: "Women",
   },
   {
     id: 2,
@@ -122,6 +137,7 @@ const products = [
     price: 129.99,
     description: "High-performance athletic footwear",
     image: img2,
+    category: "Men",
   },
   {
     id: 3,
@@ -129,6 +145,7 @@ const products = [
     price: 89.99,
     description: "Comfortable everyday shoes",
     image: img3,
+    category: "Kids",
   },
   {
     id: 1,
@@ -136,6 +153,7 @@ const products = [
     price: 599.99,
     description: "Premium quality leather handbag",
     image: img1,
+    category: "Women",
   },
   {
     id: 2,
@@ -143,6 +161,7 @@ const products = [
     price: 129.99,
     description: "High-performance athletic footwear",
     image: img2,
+    category: "Men",
   },
   {
     id: 3,
@@ -150,6 +169,7 @@ const products = [
     price: 89.99,
     description: "Comfortable everyday shoes",
     image: img3,
+    category: "Kids",
   },
   {
     id: 1,
@@ -157,6 +177,7 @@ const products = [
     price: 599.99,
     description: "Premium quality leather handbag",
     image: img1,
+    category: "Women",
   },
   {
     id: 2,
@@ -164,6 +185,7 @@ const products = [
     price: 129.99,
     description: "High-performance athletic footwear",
     image: img2,
+    category: "Men",
   },
   {
     id: 3,
@@ -171,6 +193,7 @@ const products = [
     price: 89.99,
     description: "Comfortable everyday shoes",
     image: img3,
+    category: "Kids",
   },
 ];
 
