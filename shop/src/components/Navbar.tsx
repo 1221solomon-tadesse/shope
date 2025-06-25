@@ -6,11 +6,15 @@ import { FaShoppingBag } from "react-icons/fa";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useCartStore } from "../store/useCartStore";
+
 const Navbar = () => {
    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false); 
   const [isMore, setIsMore] = useState(false);
   const router = useRouter();
+  const cartItems = useCartStore((state) => state.cartItems);
+  const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
     <div className="flex justify-between md:justify-around p-4 items-center relative">
@@ -111,10 +115,15 @@ const Navbar = () => {
       <div className="hidden  md:block">Currency</div>
       <div className="w-12 flex items-center justify-center">
         <button
-          className="rounded-full bg-[#882BEC] w-10 h-10 flex items-center justify-center"
-          onClick={() => router.push("/Cart")} // Navigate to cart page
+          className="rounded-full bg-[#882BEC] w-10 h-10 flex items-center justify-center relative"
+          onClick={() => router.push("/Cart")}
         >
           <FaShoppingBag className="text-white w-6 h-6" />
+          {cartCount > 0 && (
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+              {cartCount}
+            </span>
+          )}
         </button>
       </div>
 

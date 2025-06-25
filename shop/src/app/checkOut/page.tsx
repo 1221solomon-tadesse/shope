@@ -2,7 +2,6 @@
 import { useCart } from "@/contect/CartContect";
 import { useState } from "react";
 
-
 export default function CheckoutPage() {
   const { cartItems, cartTotal, clearCart } = useCart();
   const [formData, setFormData] = useState({
@@ -97,43 +96,35 @@ export default function CheckoutPage() {
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="block mb-2 font-medium">City</label>
-              <input
-                type="text"
-                required
-                className="w-full p-3 border rounded"
-                value={formData.city}
-                onChange={(e) =>
-                  setFormData({ ...formData, city: e.target.value })
-                }
-              />
-            </div>
-            <div>
-              <label className="block mb-2 font-medium">Country</label>
-              <select
-                required
-                className="w-full p-3 border rounded"
-                value={formData.country}
-                onChange={(e) =>
-                  setFormData({ ...formData, country: e.target.value })
-                }
-              >
-                <option value="">Select your region</option>
-                <option value="US">Tigray</option>
-                <option value="UK">Afar</option>
-                <option value="CA">Amhara</option>
-                <option value="CA">Oromia</option>
-                <option value="CA">Somali or Hare</option>
-              </select>
-            </div>
+          <div>
+            <label className="block mb-2 font-medium">City</label>
+            <input
+              type="text"
+              required
+              className="w-full p-3 border rounded"
+              value={formData.city}
+              onChange={(e) =>
+                setFormData({ ...formData, city: e.target.value })
+              }
+            />
+          </div>
+
+          <div>
+            <label className="block mb-2 font-medium">Country</label>
+            <input
+              type="text"
+              required
+              className="w-full p-3 border rounded"
+              value={formData.country}
+              onChange={(e) =>
+                setFormData({ ...formData, country: e.target.value })
+              }
+            />
           </div>
 
           <div>
             <label className="block mb-2 font-medium">Payment Method</label>
             <select
-              required
               className="w-full p-3 border rounded"
               value={formData.paymentMethod}
               onChange={(e) =>

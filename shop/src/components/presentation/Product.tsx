@@ -26,9 +26,7 @@ export default function Product() {
           {products.slice(0, 3).map((product) => (
             <div
               key={product.id}
-              className="relative flex-none w-[80%] md:w-[435px] h-[497px
-] bg-white rounded-lg border-2 p-6 
-                        "
+              className="relative flex-none w-[80%] md:w-[435px] h-[497px] bg-white rounded-lg border-2 p-6"
             >
               <button className="absolute top-10 left-10 p-2 rounded-full bg-white hover:bg-gray-100 transition-colors">
                 <svg
