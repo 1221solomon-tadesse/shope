@@ -9,15 +9,13 @@ const AllProduct = () => {
   const handleSeeMore = () => {
     const isMobile = window.innerWidth < 768;
     if (isMobile) {
-      setVisibleCount((prev) => prev + 4); // Add 4 more for mobile
+      setVisibleCount((prev) => prev + 4); 
     } else {
-      setVisibleCount((prev) => prev + 6); // Add 6 more for desktop
+      setVisibleCount((prev) => prev + 6); 
     }
   };
   return (
     <div className="min-h-screen p-8">
-      <h1 className="text-3xl font-bold mb-8">Latest Collections</h1>
-
       <div className="md:container md:mx-auto overflow-y-hidden">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-4">
           {products.slice(0, visibleCount).map((product) => (
