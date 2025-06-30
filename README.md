@@ -14,7 +14,7 @@ This is a **responsive frontend shopping web application** built using **Next.js
 - **Next.js** – Framework for React
 - **React** – Frontend library
 - **Tailwind CSS** – For responsive and modern styling
-- **Context API / Redux** – (optional) for state management (cart handling)
+- **Zustand** –  for state management (cart handling)
 
 ## 📁 Pages Overview
 
