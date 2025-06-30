@@ -96,29 +96,29 @@ export default function CheckoutPage() {
             />
           </div>
 
-          <div>
-            <label className="block mb-2 font-medium">City</label>
-            <input
-              type="text"
-              required
-              className="w-full p-3 border rounded"
-              value={formData.city}
-              onChange={(e) =>
-                setFormData({ ...formData, city: e.target.value })
-              }
-            />
-          </div>
+            <div>
+              <label className="block mb-2 font-medium">City</label>
+              <input
+                type="text"
+                required
+                className="w-full p-3 border rounded"
+                value={formData.city}
+                onChange={(e) =>
+                  setFormData({ ...formData, city: e.target.value })
+                }
+              />
+            </div>
 
-          <div>
-            <label className="block mb-2 font-medium">Country</label>
+            <div>
+              <label className="block mb-2 font-medium">Country</label>
             <input
               type="text"
-              required
-              className="w-full p-3 border rounded"
-              value={formData.country}
-              onChange={(e) =>
-                setFormData({ ...formData, country: e.target.value })
-              }
+                required
+                className="w-full p-3 border rounded"
+                value={formData.country}
+                onChange={(e) =>
+                  setFormData({ ...formData, country: e.target.value })
+                }
             />
           </div>
 

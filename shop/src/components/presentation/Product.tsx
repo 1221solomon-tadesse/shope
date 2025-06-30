@@ -1,4 +1,5 @@
-'use client'
+'use client';
+
 import Image from "next/image";
 import products, { menu } from "@/components/data/Productcard";
 import { useCart } from '@/contect/CartContect'; 
@@ -31,13 +32,16 @@ export default function Product({ initialCategory = null }: ProductProps) {
     : products;
 
   return (
-    <div className="min-h-screen  p-8">
-      <h1 className="text-3xl font-bold mt-10 mb-10 flex justify-around ">
+    <div className="min-h-screen p-8">
+      <h1 className="text-3xl font-bold mt-10 mb-10 flex justify-around">
         Latest Collections
       </h1>
+
       <div className="flex gap-4 mb-8 justify-center flex-wrap">
         <button
-          className={`px-4 py-2 rounded-lg border ${selectedCategory === null ? 'bg-blue-600 text-white' : 'bg-white text-black'}`}
+          className={`px-4 py-2 rounded-lg border ${
+            selectedCategory === null ? 'bg-blue-600 text-white' : 'bg-white text-black'
+          }`}
           onClick={() => setSelectedCategory(null)}
         >
           All
@@ -45,19 +49,22 @@ export default function Product({ initialCategory = null }: ProductProps) {
         {menu.map((item) => (
           <button
             key={item.id}
-            className={`px-4 py-2 rounded-lg border ${selectedCategory === item.name ? 'bg-blue-600 text-white' : 'bg-white text-black'}`}
+            className={`px-4 py-2 rounded-lg border ${
+              selectedCategory === item.name ? 'bg-blue-600 text-white' : 'bg-white text-black'
+            }`}
             onClick={() => setSelectedCategory(item.name)}
           >
             {item.name}
           </button>
         ))}
       </div>
-      <div className="md:container md:mx-auto overflow-y-hidden">
-        <div className="flex md:flex-row md:flex-wrap gap-4 overflow-x-auto pb-4 scrollbar-hide md:justify-center ">
+
+      <div className="md:container md:mx-auto">
+        <div className="flex md:flex-row md:flex-wrap gap-4 pb-4 justify-center">
           {filteredProducts.slice(0, 3).map((product) => (
             <div
               key={product.id}
-              className="relative flex-none w-[80%] md:w-[435px] h-[497px] bg-white rounded-lg border-2 p-6"
+              className="relative flex-none w-[80%] md:w-[350px] h-auto bg-white rounded-lg border-2 p-6"
             >
               <button className="absolute top-10 left-10 p-2 rounded-full bg-white hover:bg-gray-100 transition-colors">
                 <svg
@@ -80,13 +87,13 @@ export default function Product({ initialCategory = null }: ProductProps) {
                 In Stock
               </div>
 
-              <div className="aspect-square bg-gray-200 rounded-lg mb-4 overflow-hidden">
+              <div className="aspect-square bg-gray-200 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
                 <Image
                   src={product.image}
                   alt={product.name}
-                  width={400}
-                  height={400}
-                  className="object-cover mr-5"
+                  width={250}
+                  height={250}
+                  className="object-cover"
                 />
               </div>
 
