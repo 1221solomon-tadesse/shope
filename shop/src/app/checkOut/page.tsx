@@ -3,7 +3,7 @@ import { useCart } from "@/contect/CartContect";
 import { useState } from "react";
 
 export default function CheckoutPage() {
-  const { cartItems, cartTotal, clearCart } = useCart();
+  const { cartItems, cartTotal , clearCart } = useCart();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -161,7 +161,7 @@ export default function CheckoutPage() {
             <div className="border-t pt-4 space-y-2">
               <div className="flex justify-between">
                 <span>Subtotal:</span>
-                <span>${cartTotal.toFixed(2)}</span>
+                <span>${(cartTotal ?? 0).toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
                 <span>Tax (10%):</span>
